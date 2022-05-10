@@ -1,5 +1,4 @@
 import * as T from "three";
-import { Vector3 } from "three";
 import { ArcballControls } from "three/examples/jsm/controls/ArcballControls.js";
 
 const canvas = document.querySelector<HTMLCanvasElement>("#canvas")!;
@@ -11,8 +10,6 @@ const renderer = new T.WebGL1Renderer({
 const camera = new T.PerspectiveCamera(45);
 camera.position.set(0, 10, 20);
 camera.lookAt(0, 0, 0);
-
-new ArcballControls(camera, canvas);
 
 // Responsive Camera/Canvas
 function updateCanvassize() {
@@ -43,6 +40,10 @@ const light = new T.DirectionalLight(color, intensity);
 light.position.set(-1, 2, 4);
 light.lookAt(0, 0, 0);
 scene.add(light);
+
+// Camera controls
+/* const controls = */ new ArcballControls(camera, canvas, scene);
+// controls.cursorZoom = true;
 
 // Animation
 function render(time: number) {
