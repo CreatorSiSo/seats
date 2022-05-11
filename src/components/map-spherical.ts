@@ -1,20 +1,32 @@
 import { css, html, LitElement } from "lit";
 import { customElement, query } from "lit/decorators.js";
+import "@material/mwc-fab";
 
 import * as T from "three";
 import { ArcballControls } from "three/examples/jsm/controls/ArcballControls.js";
 
 @customElement("map-spherical")
 export class MapSperical extends LitElement {
-	static styles = [
-		css`
-			canvas {
-				width: 100%;
-				height: 100%;
-				display: block;
-			}
-		`,
-	];
+	static styles = css`
+		#wrapper {
+			position: relative;
+			width: 100%;
+			height: 100%;
+		}
+
+		#overlay {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			z-index: 10;
+		}
+
+		canvas {
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+	`;
 
 	width = 1440;
 	height = 1080;
@@ -55,8 +67,6 @@ export class MapSperical extends LitElement {
 	}
 
 	updated() {
-		console.info("Shadow-dom for", this.localName, "has been rendered.");
-
 		this.camera.position.set(0, 10, 20);
 		this.camera.lookAt(0, 0, 0);
 		this._setupScene();
@@ -65,21 +75,25 @@ export class MapSperical extends LitElement {
 		this.renderer = new T.WebGL1Renderer({
 			canvas: this.canvas,
 			antialias: true,
+			alpha: true,
 		});
 
 		const render = (_time: number) => {
 			this._updateCanvasSize();
-
-			_time *= 0.001; // convert time to seconds
-
 			this.renderer.render(this.scene, this.camera);
-
 			requestAnimationFrame(render);
 		};
 		requestAnimationFrame(render);
 	}
 
 	render() {
-		return html`<canvas></canvas>`;
+		return html`
+			<section id="wrapper">
+				<canvas></canvas>
+				<div id="overlay">
+					<mwc-fab icon="edit"></mwc-fab>
+				</div>
+			</section>
+		`;
 	}
 }

@@ -6,7 +6,6 @@ export class Panel extends LitElement {
 	static styles = [
 		css`
 			:host {
-				background-color: red;
 				position: relative;
 			}
 
