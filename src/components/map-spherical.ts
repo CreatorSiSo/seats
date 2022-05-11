@@ -4,7 +4,7 @@ import { customElement, query } from "lit/decorators.js";
 import * as T from "three";
 import { ArcballControls } from "three/examples/jsm/controls/ArcballControls.js";
 
-@customElement("map-sperical")
+@customElement("map-spherical")
 export class MapSperical extends LitElement {
 	static styles = [
 		css`
@@ -67,10 +67,10 @@ export class MapSperical extends LitElement {
 			antialias: true,
 		});
 
-		const render = (time: number) => {
+		const render = (_time: number) => {
 			this._updateCanvasSize();
 
-			time *= 0.001; // convert time to seconds
+			_time *= 0.001; // convert time to seconds
 
 			this.renderer.render(this.scene, this.camera);
 

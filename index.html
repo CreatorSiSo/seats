@@ -7,16 +7,40 @@
 		<title>Seats App</title>
 
 		<script type="module" src="/src/components/map-spherical.ts"></script>
+		<script type="module" src="/src/components/settings-panel.ts"></script>
 		<style>
 			html,
 			body {
 				margin: 0;
 				height: 100%;
 				background-color: black;
+				color: white;
+			}
+
+			main {
+				display: flex;
+				height: 100%;
+				justify-content: stretch;
+				align-content: stretch;
+			}
+
+			#map {
+				flex-grow: 2;
 			}
 		</style>
 	</head>
 	<body>
-		<map-sperical></map-sperical>
+		<main>
+			<map-spherical id="map"></map-spherical>
+			<settings-panel expanded>
+				<input type="email" />
+				<input type="number" />
+				<input type="date" />
+				<input type="file" />
+				<input type="month" />
+				<input type="reset" />
+				<input type="submit" />
+			</settings-panel>
+		</main>
 	</body>
 </html>
