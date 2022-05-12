@@ -2,67 +2,11 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Seats App</title>
 
-		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-		<link
-			rel="preload"
-			href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-			as="style"
-			type="text/css"
-		/>
-		<link
-			rel="preload"
-			href="https://fonts.googleapis.com/css?family=Material+Icons&display=block"
-			as="style"
-			type="text/css"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css?family=Material+Icons&display=block"
-			rel="stylesheet"
-		/>
-
-		<script type="module" src="/src/index.ts"></script>
-		<script type="module" src="/src/components/map-spherical.ts"></script>
-		<script type="module" src="/src/components/settings-panel.ts"></script>
-		<style>
-			html,
-			body {
-				margin: 0;
-				height: 100%;
-			}
-
-			main {
-				display: flex;
-				height: 100%;
-				justify-content: stretch;
-				align-content: stretch;
-			}
-
-			#map {
-				flex-grow: 2;
-			}
-		</style>
+		<script type="module" src="/src/main.ts"></script>
 	</head>
-	<body>
-		<main>
-			<map-spherical id="map"></map-spherical>
-			<settings-panel expanded>
-				<mwc-button outlined label="outlined" icon="code"></mwc-button>
-				<!-- <input type="email" />
-				<input type="number" />
-				<input type="date" />
-				<input type="file" />
-				<input type="month" />
-				<input type="reset" />
-				<input type="submit" /> -->
-			</settings-panel>
-		</main>
-	</body>
+	<body></body>
 </html>
