@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import TextField from "@/components/common/TextField.vue";
 import SideSheet from "@/components/common/SideSheet.vue";
-import FloatingActionButton from "@/components/common/FloatingActionButton.vue";
+import FAB from "@/components/common/FAB.vue";
 
 import BaseMap from "@/components/custom/BaseMap.vue";
 </script>
@@ -10,10 +10,10 @@ import BaseMap from "@/components/custom/BaseMap.vue";
 	<header>Seats App</header>
 	<main>
 		<BaseMap id="map">
-			<FloatingActionButton>
+			<FAB kind="primary" size="large">
 				<template v-slot:icon>✒️</template>
 				Test
-			</FloatingActionButton>
+			</FAB>
 		</BaseMap>
 		<SideSheet>
 			<TextField />

@@ -1,9 +1,11 @@
-@import url("normalize.css/normalize.css");
-
 /* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
 select {
 	font: inherit;
+}
+
+* {
+	border-width: 0;
 }
